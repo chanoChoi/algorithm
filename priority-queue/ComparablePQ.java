@@ -1,5 +1,4 @@
 import java.util.Collections;
-import java.util.Objects;
 import java.util.PriorityQueue;
 
 // Person의 나이순으로 오름차순 정렬
