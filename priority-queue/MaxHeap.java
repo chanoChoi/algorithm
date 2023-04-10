@@ -14,8 +14,8 @@ class Heap2 {
 //  2. 부모 노드와 키 비교한 후 클 경우 부모 자리와 교체(반복)
         this.heap.add(data);
         int curIdx = this.heap.size() - 1;
-        while (curIdx > 1 && this.heap.get(curIdx / 2) < data) {
-            int parentVal = this.heap.get(curIdx / 2);
+        while (curIdx > 1 && this.heap.get(curIdx >>> 1) < data) {
+            int parentVal = this.heap.get(curIdx >>> 1);
             this.heap.set(curIdx / 2, data);
             this.heap.set(curIdx, parentVal);
 
@@ -37,8 +37,8 @@ class Heap2 {
 
         int curIdx = 1;
         while (true) {
-            int leftIdx = curIdx * 2;
-            int rightIdx = curIdx * 2 + 1;
+            int leftIdx = curIdx << 1;
+            int rightIdx = (curIdx << 1) + 1;
             int targetIdx = -1;
 
             if (rightIdx < this.heap.size()) {
